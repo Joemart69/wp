@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Ysabeau+SC:wght@300;400;600&display=swap");
+
+:root{
+  --brand:#cd4f07;
+  --brand-2:#6b5b95;
+  --bg:#fff5f8;
+  --text:#333333;
+  --grad:#f6978e;
+}
+
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Ysabeau SC", system-ui, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+}
+
+h1,h2,h3,h4{
+  font-family:"Libre Baskerville", Georgia, serif;
+  color:var(--text);
+}
+
+/* Navbar */
+.navbar{background:var(--brand) !important}
+.navbar .nav-link{color:#ffd9c6 !important}
+.navbar .nav-link:hover{color:#fff !important}
+.navbar-brand{display:flex;align-items:center;gap:.5rem;color:#fff !important;font-weight:700}
+.navbar-brand img{height:28px;width:auto}
+
+.page-head{padding:1.25rem 0 .5rem}
+.lead-small{font-size:.9rem;color:#666;margin-top:.25rem}
+
+/* Home cards */
+.card-skill .card-title{font-weight:700}
+.card-skill .rate{font-size:.9rem;color:#666}
+
+/* Simple grid spacing helper */
+.section-pad{padding-top:1rem}
+
+/* Footer */
+.site-footer{
+  margin-top:3rem;
+  background:linear-gradient(0deg, var(--brand), var(--grad));
+  color:#fff;
+  padding:2.25rem 0;
+  text-align:center;
+}
+.site-footer .rule{
+  width:56px;height:6px;border-radius:4px;background:#d87c49;margin:0 auto .75rem;
+}
