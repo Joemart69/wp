@@ -50,3 +50,27 @@ h1,h2,h3,h4{
 .site-footer .rule{
   width:56px;height:6px;border-radius:4px;background:#d87c49;margin:0 auto .75rem;
 }
+.banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.skills-table th,
+.skills-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.skills-table th {
+  background-color: #f2f2f2;
+}
+
