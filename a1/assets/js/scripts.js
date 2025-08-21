@@ -1,31 +1,36 @@
+
+// Include fragments: looks for data-include="file.html"
 function includeHTML() {
-  const elements = document.querySelectorAll("[w3-include-html]");
-  elements.forEach(el => {
-    const file = el.getAttribute("w3-include-html");
-    if (file) {
-      fetch(file)
-        .then(response => {
-          if (response.ok) return response.text();
-          throw new Error("Page not found.");
-        })
-        .then(data => {
-          el.innerHTML = data;
-          el.removeAttribute("w3-include-html");
-          includeHTML();
-        })
-        .catch(error => {
-          el.innerHTML = error.message + " | Joemart Xuereb (s3843976)";
-        });
-    }
+  const elements = document.querySelectorAll("[data-include]");
+  elements.forEach((el) => {
+    const file = el.getAttribute("data-include");
+    if (!file) return;
+    fetch(file)
+      .then((r) => {
+        if (r.ok) return r.text();
+        throw new Error("Page not found.");
+      })
+      .then((html) => {
+        el.innerHTML = html;
+        el.removeAttribute("data-include");
+        includeHTML(); // handle nested includes if present
+      })
+      .catch((err) => {
+        el.innerHTML = err.message + " | Joemart Xuereb (s3843976)";
+      });
   });
 }
-
 document.addEventListener("DOMContentLoaded", includeHTML);
-function openModal(img) {
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modal-img").src = img.src;
-}
 
+// Gallery modal
+function openModal(thumb) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  modalImg.src = thumb.src;
+  modalImg.alt = thumb.alt ? "Expanded " + thumb.alt.toLowerCase() : "Expanded gallery image";
+  modal.style.display = "flex";
+}
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
 }

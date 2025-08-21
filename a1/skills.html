@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillSwap - Skills</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillSwap – Skills</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
 <body>
-  <div id="header"></div>
+  <div data-include="header.html"></div>
 
-  <main>
-    <img src="images/skills_banner.png" alt="Skills Banner" class="banner">
-
+  <main class="section-pad">
+    <img src="assets/images/skills_banner.png" alt="Skills banner" class="banner">
     <h1>Available Skills</h1>
     <table class="skills-table">
       <thead>
@@ -35,13 +35,14 @@
         </tr>
         <tr>
           <td>Data Analysis</td>
-          <td>Excel, Python, and visualization skills</td>
+          <td>Excel, Python, visualisation</td>
           <td>Advanced</td>
         </tr>
       </tbody>
     </table>
   </main>
 
-  <div id="footer"></div>
+  <div data-include="footer.html"></div>
 </body>
 </html>
+

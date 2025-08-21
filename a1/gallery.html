@@ -1,34 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillSwap - Gallery</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillSwap – Gallery</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
 <body>
-  <div id="header"></div>
+  <div data-include="header.html"></div>
 
-  <main>
+  <main class="section-pad">
     <h1>Gallery</h1>
+
     <div class="gallery">
-      <img src="images/gallery/1.png" alt="Gallery 1" onclick="openModal(this)">
-      <img src="images/gallery/2.png" alt="Gallery 2" onclick="openModal(this)">
-      <img src="images/gallery/3.png" alt="Gallery 3" onclick="openModal(this)">
-      <img src="images/gallery/4.png" alt="Gallery 4" onclick="openModal(this)">
-      <img src="images/gallery/5.png" alt="Gallery 5" onclick="openModal(this)">
-      <img src="images/gallery/6.png" alt="Gallery 6" onclick="openModal(this)">
-      <img src="images/gallery/7.png" alt="Gallery 7" onclick="openModal(this)">
-      <img src="images/gallery/8.png" alt="Gallery 8" onclick="openModal(this)">
+      <img src="assets/images/gallery/1.png" alt="Gallery 1" onclick="openModal(this)">
+      <img src="assets/images/gallery/2.png" alt="Gallery 2" onclick="openModal(this)">
+      <img src="assets/images/gallery/3.png" alt="Gallery 3" onclick="openModal(this)">
+      <img src="assets/images/gallery/4.png" alt="Gallery 4" onclick="openModal(this)">
+      <img src="assets/images/gallery/5.png" alt="Gallery 5" onclick="openModal(this)">
+      <img src="assets/images/gallery/6.png" alt="Gallery 6" onclick="openModal(this)">
+      <img src="assets/images/gallery/7.png" alt="Gallery 7" onclick="openModal(this)">
+      <img src="assets/images/gallery/8.png" alt="Gallery 8" onclick="openModal(this)">
     </div>
 
-    <div id="modal" class="modal" onclick="closeModal()">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modal-img">
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-img">
+      <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+
+      <img class="modal-content" id="modal-img" src="assets/images/gallery/1.png" alt="Expanded gallery image">
     </div>
   </main>
 
-  <div id="footer"></div>
+  <div data-include="footer.html"></div>
 </body>
 </html>
