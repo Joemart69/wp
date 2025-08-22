@@ -3,70 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkillSwap – Skills</title>
+  <title>SkillSwap — All Skills</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@300;400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/scripts.js" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div data-include="header.html"></div>
 
-  <main class="section-pad">
-    <img src="assets/images/skills_banner.png" alt="Skills banner" class="banner">
-    <h1>Available Skills</h1>
-    <table class="skills-table">
-      <thead>
-        <tr>
-          <th>Skill</th>
-          <th>Description</th>
-          <th>Level</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Web Development</td>
-          <td>HTML, CSS, JavaScript, responsive design</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>Graphic Design</td>
-          <td>Logos, banners, and branding with Adobe tools</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>Data Analysis</td>
-          <td>Excel, Python, visualisation</td>
-          <td>Advanced</td>
-        </tr>
-        <tr>
-          <td>Photography</td>
-          <td>Portraits, basic photo editing</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>Baking</td>
-          <td>Breads, cakes, cupcakes</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>Painting</td>
-          <td>Acrylic and watercolour basics</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>Yoga</td>
-          <td>Hatha basics, stretching routines</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>UI Prototyping</td>
-          <td>Figma wireframes and simple layouts</td>
-          <td>Intermediate</td>
-        </tr>
-      </tbody>
-    </table>
+  <main class="container my-4">
+    <h1 class="hero-title fw-bold mb-4" style="color:#cd4f07">All Skills</h1>
+    <div class="row g-4 align-items-start">
+      <div class="col-md-5">
+        <img class="img-fluid img-rounded" src="assets/images/skills_banner.png" alt="Skills banner">
+      </div>
+      <div class="col-md-7">
+        <table class="table table-striped align-middle">
+          <thead class="table-light">
+            <tr><th>Title</th><th>Category</th><th>Level</th><th>Rate ($/hr)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="#" style="color:#6b5b95">Beginner Guitar Lessons</a></td><td>Music</td><td>Beginner</td><td>30.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Intermediate Fingerstyle</a></td><td>Music</td><td>Intermediate</td><td>45.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Artisan Bread Baking</a></td><td>Cooking</td><td>Beginner</td><td>25.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">French Pastry Making</a></td><td>Cooking</td><td>Expert</td><td>50.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Watercolor Basics</a></td><td>Art</td><td>Beginner</td><td>20.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Digital Illustration with Procreate</a></td><td>Art</td><td>Intermediate</td><td>40.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Morning Vinyasa Flow</a></td><td>Wellness</td><td>Intermediate</td><td>35.00</td></tr>
+            <tr><td><a href="#" style="color:#6b5b95">Intro to PHP & MySQL</a></td><td>Programming</td><td>Expert</td><td>55.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </main>
 
   <div data-include="footer.html"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>
