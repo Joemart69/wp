@@ -1,14 +1,20 @@
+// Include header/footer
 document.addEventListener('DOMContentLoaded', async () => {
   const includeEls = document.querySelectorAll('[data-include]');
   for (const el of includeEls) {
     const file = el.getAttribute('data-include');
     if (!file) continue;
-    const res = await fetch(file);
-    const html = await res.text();
-    el.outerHTML = html;
+    try {
+      const res = await fetch(file, { cache: 'no-cache' });
+      const html = await res.text();
+      el.outerHTML = html;
+    } catch (e) {
+      console.error('Include failed for', file, e);
+    }
   }
 });
 
+// Gallery modal image swap
 document.addEventListener('click', (e) => {
   const a = e.target.closest('[data-bs-target="#imgModal"]');
   if (!a) return;
@@ -17,27 +23,32 @@ document.addEventListener('click', (e) => {
   if (img) img.src = src;
 });
 
+// Highlight current nav
 document.addEventListener('DOMContentLoaded', () => {
   const path = location.pathname.split('/').pop() || 'index.html';
-  const key = path.replace('.html','');
-  const link = document.querySelector(`[data-nav="${key}"]`);
-  if (link) link.classList.add('active');
+  const key = path.replace('.html', '');
+  const link = document.querySelector(`a[data-nav="${key}"]`);
+  link?.classList.add('active');
+});
 
-  const form = document.getElementById('add-skill-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      const f = document.getElementById('img');
-      const ok = /\.(jpe?g|png|gif|webp)$/i.test(f?.value || '');
-      if (!ok) {
-        e.preventDefault();
-        const alert = document.getElementById('file-alert');
-        if (alert) alert.classList.remove('d-none');
-        f?.focus();
-      }
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        form.reportValidity();
-      }
-    });
-  }
+// Add form validation (image extension + HTML5 validity)
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#add-form');
+  if (!form) return;
+
+  const fileInput = form.querySelector('input[type="file"][name="image"]');
+  form.addEventListener('submit', (e) => {
+    // extension check
+    const ok = /\.(jpe?g|png|gif|webp)$/i.test(fileInput?.value || '');
+    if (!ok) {
+      e.preventDefault();
+      document.getElementById('file-alert')?.classList.remove('d-none');
+      fileInput?.focus();
+    }
+    // built-in required/number/select validity
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+    }
+  });
 });
